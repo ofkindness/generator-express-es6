@@ -1,21 +1,22 @@
-import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import Debug from 'debug';
-// uncomment after placing your favicon in /public
-// import favicon from 'serve-favicon';
+import express from 'express';
 import logger from 'morgan';
+// import favicon from 'serve-favicon';
 import path from 'path';
+<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware'<% } %><% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware'<% } %><% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
+import index from './routes/index';
 
 const app = express();
 const debug = Debug('<%= slugify(appname) %>:app');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', '<%= options.viewEngine %>');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -23,14 +24,15 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-
-// app.use(require('node-sass-middleware')({
-//   src: path.join(__dirname, 'public'),
-//   dest: path.join(__dirname, 'public'),
-//   indentedSyntax: true,
-//   sourceMap: true
-// }));
+<% if(options.cssPreprocessor == 'stylus'){ %>app.use(stylusMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor == 'less'){ %>app.use(lessMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor == 'sass'){ %>app.use(sassMiddleware({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: true,
+  sourceMap: true
+}));<% } %>
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -40,7 +42,7 @@ app.use((req, res, next) => {
 });
 
 // error handler
-/*eslint no-unused-vars: 0*/
+/* eslint no-unused-vars: 0 */
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;

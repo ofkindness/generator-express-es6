@@ -4,11 +4,11 @@
   "env": {
     "es6": true,
     "node": true,
-    "mocha" : true,
+    "mocha" : true
   },
   "ecmaFeatures": {
     "classes": true,
-    "modules": true,
+    "modules": true
   },
   "rules": {
     "comma-dangle": [2, "never"],

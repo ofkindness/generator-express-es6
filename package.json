@@ -43,12 +43,6 @@
     "yeoman-assert": "^2.2.1",
     "yeoman-test": "^1.6.0"
   },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
   "repository": "ofkindness/generator-express-es6",
   "scripts": {
     "prepublish": "gulp prepublish",

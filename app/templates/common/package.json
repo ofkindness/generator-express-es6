@@ -1,0 +1,38 @@
+{
+  "name": "<%= slugify(appname) %>",
+  "version": "0.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/start",
+    "test": "mocha --recursive './test/*Test.js' --compilers js:babel-core/register"
+  },
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0"<% if(options.viewEngine == 'ejs'){ %>,
+    "ejs": "^2.5.5"<% } %><% if(options.viewEngine == 'pug'){ %>,
+    "pug": "^2.0.0-beta11"<% } %>,
+    "serve-favicon": "~2.3.2"<% if(options.cssPreprocessor == 'stylus'){ %>,
+    "stylus": "^0.54.5"<% } %><% if(options.cssPreprocessor == 'less'){ %>,
+    "less-middleware": "^2.2.0"<% } %><% if(options.cssPreprocessor == 'sass'){ %>,
+    "node-sass-middleware": "^0.9.8"<% } %>
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-react": "^6.10.0"
+  }
+}
