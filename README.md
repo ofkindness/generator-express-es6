@@ -1,4 +1,4 @@
-# Generator express-es6
+# Generator express-es6 [![NPM version][https://badge.fury.io/js/generator-express-es6.svg]][https://npmjs.org/package/generator-express-es6][![Dependency Status][https://david-dm.org/ofkindness/generator-express-es6.svg?theme=shields.io]][https://david-dm.org/ofkindness/generator-express-es6]
 
 An Express.js generator for Yeoman. Mimicry the express command line tool.
 
@@ -8,9 +8,9 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
   - babel-core
   - babel-polyfill
 - Support View engines:
-  - [Pug](https://pugjs.org)
   - [EJS](http://ejs.co)
-- Supported CSS pre-processors
+  - [Pug](https://pugjs.org)
+- Support CSS pre-processors
   - LESS
   - SASS
   - Stylus
