@@ -1,6 +1,6 @@
 {
-  "name": "generator-express-es-6",
-  "version": "0.0.1",
+  "name": "generator-express-es6",
+  "version": "0.1.1",
   "description": "Express.js ES6 boilerplate",
   "homepage": "",
   "author": {
@@ -11,7 +11,7 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "boilerplate",
     "expressjs",
@@ -43,13 +43,7 @@
     "yeoman-assert": "^2.2.1",
     "yeoman-test": "^1.6.0"
   },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
-  "repository": "ofkindness/generator-express-es-6",
+  "repository": "ofkindness/generator-express-es6",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
