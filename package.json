@@ -1,6 +1,6 @@
 {
   "name": "generator-express-es6",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Express.js ES6 boilerplate",
   "homepage": "",
   "author": {
@@ -11,7 +11,7 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "boilerplate",
     "expressjs",
