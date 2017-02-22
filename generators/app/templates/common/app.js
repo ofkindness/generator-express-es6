@@ -5,7 +5,7 @@ import express from 'express';
 import logger from 'morgan';
 // import favicon from 'serve-favicon';
 import path from 'path';
-<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware'<% } %><% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware'<% } %><% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
+<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware';<% } %><% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware';<% } %><% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
 import index from './routes/index';
 
 const app = express();
