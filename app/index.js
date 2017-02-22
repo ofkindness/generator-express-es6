@@ -13,7 +13,7 @@ module.exports = Generator.extend({
   prompting: function() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the super ' + chalk.red('generator-express-es-6') + ' generator!'
+      'Welcome to the super ' + chalk.red('generator-express-es6') + ' generator!'
     ));
 
     const prompts = [{

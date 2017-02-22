@@ -7,7 +7,7 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-describe('generator-express-es-6:app', function() {
+describe('generator-express-es6:app', function() {
   before(function() {
     return helpers.run(path.join(__dirname, '../app'))
       .withPrompts({

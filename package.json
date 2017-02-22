@@ -1,5 +1,5 @@
 {
-  "name": "generator-express-es-6",
+  "name": "generator-express-es6",
   "version": "0.0.1",
   "description": "Express.js ES6 boilerplate",
   "homepage": "",
@@ -49,7 +49,7 @@
       "mocha": true
     }
   },
-  "repository": "ofkindness/generator-express-es-6",
+  "repository": "ofkindness/generator-express-es6",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"

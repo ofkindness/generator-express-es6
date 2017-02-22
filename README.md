@@ -1,19 +1,19 @@
-# generator-express-es-6 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-express-es6 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Express.js ES6 boilerplate
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-express-es-6 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-express-es6 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-express-es-6
+npm install -g generator-express-es6
 ```
 
 Then generate your new project:
 
 ```bash
-yo express-es-6
+yo express-es6
 ```
 
 ## Getting To Know Yeoman
@@ -28,9 +28,9 @@ yo express-es-6
 MIT © [Andrei Tretyakov](2017)
 
 
-[npm-image]: https://badge.fury.io/js/generator-express-es-6.svg
-[npm-url]: https://npmjs.org/package/generator-express-es-6
-[travis-image]: https://travis-ci.org/ofkindness/generator-express-es-6.svg?branch=master
-[travis-url]: https://travis-ci.org/ofkindness/generator-express-es-6
-[daviddm-image]: https://david-dm.org/ofkindness/generator-express-es-6.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/ofkindness/generator-express-es-6
+[npm-image]: https://badge.fury.io/js/generator-express-es6.svg
+[npm-url]: https://npmjs.org/package/generator-express-es6
+[travis-image]: https://travis-ci.org/ofkindness/generator-express-es6.svg?branch=master
+[travis-url]: https://travis-ci.org/ofkindness/generator-express-es6
+[daviddm-image]: https://david-dm.org/ofkindness/generator-express-es6.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/ofkindness/generator-express-es6
