@@ -14,7 +14,7 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
 - Support View engines:
   - [EJS](http://ejs.co)
   - [Pug](https://pugjs.org)
-- Support CSS pre-processors
+- Support CSS pre-processors:
   - LESS
   - SASS
   - Stylus
