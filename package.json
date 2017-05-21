@@ -1,12 +1,11 @@
 {
   "name": "generator-express-es6",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "An Express.js generator for Yeoman",
   "homepage": "",
   "author": {
     "name": "Andrei Tretyakov",
-    "email": "andrei.tretyakov@gmail.com",
-    "url": ""
+    "email": "andrei.tretyakov@gmail.com"
   },
   "files": [
     "generators"
