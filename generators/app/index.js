@@ -33,19 +33,23 @@ class ExpressGenerator extends Generator {
       name: 'viewEngine',
       message: 'Select a view engine to use:',
       choices: [
+        'none',
         'ejs',
         'pug'
       ],
+      default: 'none',
       store: true
     }, {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'Select a css preprocessor to use:',
       choices: [
+        'none',
         'less',
         'stylus',
         'sass'
       ],
+      default: 'none',
       store: true
     }, {
       type: 'confirm',
@@ -80,7 +84,7 @@ class ExpressGenerator extends Generator {
     glob.sync('**', {
       cwd: this.sourceRoot()
     }).map(
-      file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('routes', file)), this)
+      file => this.fs.copyTpl(this.templatePath(file), this.destinationPath(path.join('routes', file)), this)
     );
 
     // public
