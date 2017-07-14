@@ -1,3 +1,5 @@
 node_modules
 coverage
 temp
+.yo-rc.json
+npm-debug.log

@@ -10,11 +10,9 @@ import index from './routes/index';
 
 const app = express();
 const debug = Debug('<%= slugify(appname) %>:app');
-
+<% if(options.viewEngine != 'none'){ %>app.set('views', path.join(__dirname, 'views'));
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', '<%= options.viewEngine %>');
-
+app.set('view engine', '<%= options.viewEngine %>');<% } %>
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -49,7 +47,7 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+<% if(options.viewEngine != 'none'){ %>  res.render('error');<% } else { %>  res.json(err);<% } %>
 });
 
 // Handle uncaughtException
