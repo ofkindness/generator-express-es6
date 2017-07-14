@@ -4,9 +4,7 @@ const router = express.Router();
 
 /* GET index page. */
 router.get('/', (req, res, next) => {
-  res.render('index', {
-    title: 'Express'
-  });
+<% if(options.viewEngine != 'none'){ %>  res.render('index', { title: 'Express' });<% } else { %>  res.json({ title: 'Express' });<% } %>
 });
 
 export default router;
