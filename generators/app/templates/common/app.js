@@ -2,10 +2,13 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import Debug from 'debug';
 import express from 'express';
+<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware';<% } %>
 import logger from 'morgan';
-// import favicon from 'serve-favicon';
 import path from 'path';
-<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware';<% } %><% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware';<% } %><% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
+<% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware';<% } %>
+// import favicon from 'serve-favicon';
+<% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
+
 import index from './routes/index';
 
 const app = express();
@@ -47,7 +50,7 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   // render the error page
   res.status(err.status || 500);
-<% if(options.viewEngine != 'none'){ %>  res.render('error');<% } else { %>  res.json(err);<% } %>
+<% if(options.viewEngine !== 'none'){ %>  res.render('error');<% } else { %>  res.json(err);<% } %>
 });
 
 // Handle uncaughtException
