@@ -52,6 +52,10 @@ class ExpressGenerator extends Generator {
       default: 'none',
       store: true
     }, {
+      type: 'confirm',
+      name: 'addTest',
+      message: 'Would you like me to add default test for app.js?'
+    }, {
       type: 'list',
       name: 'installDependencies',
       message: 'Would you like me to install dependencies?',
@@ -69,11 +73,12 @@ class ExpressGenerator extends Generator {
       default: 'no',
       store: true
     }]).then((answers) => {
-      this.options.dirname = this.slugify(answers.name);
+      this.options.addTest = answers.addTest;
       this.options.createDirectory = answers.createDirectory;
-      this.options.viewEngine = answers.viewEngine;
       this.options.cssPreprocessor = answers.cssPreprocessor;
+      this.options.dirname = this.slugify(answers.name);
       this.options.installDependencies = answers.installDependencies;
+      this.options.viewEngine = answers.viewEngine;
     });
   }
 
@@ -122,7 +127,15 @@ class ExpressGenerator extends Generator {
     );
 
     // test
-    mkdirp.sync('test');
+    if (this.options.addTest) {
+      this.sourceRoot(path.join(__dirname, 'templates', 'test'));
+      glob.sync('**', {
+        cwd: this.sourceRoot()
+      }).map(
+        file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('test', file)), this)
+      );
+    }
+
   }
 
   install() {
