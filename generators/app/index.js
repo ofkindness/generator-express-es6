@@ -55,12 +55,18 @@ class ExpressGenerator extends Generator {
       type: 'list',
       name: 'installDependencies',
       message: 'Would you like me to install dependencies?',
-      choices: [
-        'No',
-        'Yes, with npm',
-        'Yes, with yarn'
-      ],
-      default: 'No',
+      choices: [{
+        name: 'No',
+        value: 'no',
+        checked: true
+      }, {
+        name: 'Yes, with npm',
+        value: 'npm'
+      }, {
+        name: 'Yes, with yarn',
+        value: 'yarn'
+      }],
+      default: 'no',
       store: true
     }]).then((answers) => {
       this.options.dirname = this.slugify(answers.name);
@@ -114,18 +120,17 @@ class ExpressGenerator extends Generator {
     }).map(
       file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('views', file)), this)
     );
+
+    // test
+    mkdirp.sync('test');
   }
 
   install() {
     if (this.options.installDependencies === 'npm') {
-      this.yarnInstall();
-    } else if (this.options.installDependencies === 'yarn') {
       this.npmInstall();
-    } else {
-      this.installDependencies({
-        npm: false,
-        bower: false
-      });
+    }
+    if (this.options.installDependencies === 'yarn') {
+      this.yarnInstall();
     }
     console.log(yosay(`Run the app:
 $ DEBUG=${this.appname}:* npm start`));
