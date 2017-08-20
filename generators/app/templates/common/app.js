@@ -2,18 +2,18 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import Debug from 'debug';
 import express from 'express';
-<% if(options.cssPreprocessor == 'less'){ %>import lessMiddleware from 'less-middleware';<% } %>
-import logger from 'morgan';
-import path from 'path';
-<% if(options.cssPreprocessor == 'sass'){ %>import sassMiddleware from 'node-sass-middleware';<% } %>
+<% if(options.cssPreprocessor === 'less'){ %>import lessMiddleware from 'less-middleware';
+<% } %>import logger from 'morgan';
+<% if(options.cssPreprocessor === 'sass'){ %>import sassMiddleware from 'node-sass-middleware';
+<% } %>import path from 'path';
 // import favicon from 'serve-favicon';
-<% if(options.cssPreprocessor == 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';<% } %>
-
+<% if(options.cssPreprocessor === 'stylus'){ %>import { middleware as stylusMiddleware } from 'stylus';
+<% } %>
 import index from './routes/index';
 
 const app = express();
 const debug = Debug('<%= slugify(appname) %>:app');
-<% if(options.viewEngine != 'none'){ %>app.set('views', path.join(__dirname, 'views'));
+<% if(options.viewEngine !== 'none'){ %>app.set('views', path.join(__dirname, 'views'));
 // view engine setup
 app.set('view engine', '<%= options.viewEngine %>');<% } %>
 // uncomment after placing your favicon in /public
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-<% if(options.cssPreprocessor == 'stylus'){ %>app.use(stylusMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor == 'less'){ %>app.use(lessMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor == 'sass'){ %>app.use(sassMiddleware({
+<% if(options.cssPreprocessor === 'stylus'){ %>app.use(stylusMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor === 'less'){ %>app.use(lessMiddleware(path.join(__dirname, 'public')));<% } %><% if(options.cssPreprocessor === 'sass'){ %>app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
