@@ -8,9 +8,8 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
 
 ## Features
 
-- Support ES6 syntax (stage-0) with:
-  - babel-core
-  - babel-polyfill
+- Support ES6 syntax [stage-0](https://github.com/tc39/proposals/blob/master/stage-0-proposals.md) with:
+  - babel-core & babel-polyfill
 - Support View engines:
   - [EJS](http://ejs.co)
   - [Pug](https://pugjs.org)

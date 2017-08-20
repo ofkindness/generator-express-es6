@@ -53,14 +53,32 @@ class ExpressGenerator extends Generator {
       store: true
     }, {
       type: 'confirm',
+      name: 'addTest',
+      message: 'Would you like me to add default test for app.js?'
+    }, {
+      type: 'list',
       name: 'installDependencies',
-      message: 'Would you like me to install dependencies?'
+      message: 'Would you like me to install dependencies?',
+      choices: [{
+        name: 'No',
+        value: 'no',
+        checked: true
+      }, {
+        name: 'Yes, with npm',
+        value: 'npm'
+      }, {
+        name: 'Yes, with yarn',
+        value: 'yarn'
+      }],
+      default: 'no',
+      store: true
     }]).then((answers) => {
-      this.options.dirname = this.slugify(answers.name);
+      this.options.addTest = answers.addTest;
       this.options.createDirectory = answers.createDirectory;
-      this.options.viewEngine = answers.viewEngine;
       this.options.cssPreprocessor = answers.cssPreprocessor;
+      this.options.dirname = this.slugify(answers.name);
       this.options.installDependencies = answers.installDependencies;
+      this.options.viewEngine = answers.viewEngine;
     });
   }
 
@@ -107,14 +125,25 @@ class ExpressGenerator extends Generator {
     }).map(
       file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('views', file)), this)
     );
+
+    // test
+    if (this.options.addTest) {
+      this.sourceRoot(path.join(__dirname, 'templates', 'test'));
+      glob.sync('**', {
+        cwd: this.sourceRoot()
+      }).map(
+        file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('test', file)), this)
+      );
+    }
+
   }
 
   install() {
-    if (this.options.installDependencies) {
-      this.installDependencies({
-        npm: true,
-        bower: false
-      });
+    if (this.options.installDependencies === 'npm') {
+      this.npmInstall();
+    }
+    if (this.options.installDependencies === 'yarn') {
+      this.yarnInstall();
     }
     console.log(yosay(`Run the app:
 $ DEBUG=${this.appname}:* npm start`));

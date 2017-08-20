@@ -1,6 +1,6 @@
 {
   "name": "generator-express-es6",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "An Express.js generator for Yeoman",
   "homepage": "",
   "author": {
@@ -18,28 +18,26 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chalk": "^2.0.1",
     "yeoman-generator": "^1.1.1",
-    "yosay": "^2.0.0"
+    "yosay": "^2.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.1.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-config-xo-space": "^0.15.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-mocha": "^4.8.0",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-react": "^7.2.1",
     "gulp": "^3.9.0",
-    "gulp-eslint": "^3.0.1",
+    "gulp-eslint": "^4.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^1.0.0",
     "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-mocha": "^3.0.1",
+    "gulp-mocha": "^4.3.1",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
-    "yeoman-assert": "^2.2.1",
+    "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
   },
   "repository": "ofkindness/generator-express-es6",
