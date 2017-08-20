@@ -52,9 +52,16 @@ class ExpressGenerator extends Generator {
       default: 'none',
       store: true
     }, {
-      type: 'confirm',
+      type: 'list',
       name: 'installDependencies',
-      message: 'Would you like me to install dependencies?'
+      message: 'Would you like me to install dependencies?',
+      choices: [
+        'No',
+        'Yes, with npm',
+        'Yes, with yarn'
+      ],
+      default: 'No',
+      store: true
     }]).then((answers) => {
       this.options.dirname = this.slugify(answers.name);
       this.options.createDirectory = answers.createDirectory;
@@ -110,9 +117,13 @@ class ExpressGenerator extends Generator {
   }
 
   install() {
-    if (this.options.installDependencies) {
+    if (this.options.installDependencies === 'npm') {
+      this.yarnInstall();
+    } else if (this.options.installDependencies === 'yarn') {
+      this.npmInstall();
+    } else {
       this.installDependencies({
-        npm: true,
+        npm: false,
         bower: false
       });
     }
