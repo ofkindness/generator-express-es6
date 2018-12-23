@@ -1,6 +1,6 @@
-import express from 'express';
+const { Router } = require('express');
 
-const router = express.Router();
+const router = Router();
 
 /* GET index page. */
 router.get('/', (req, res) => {
@@ -9,4 +9,4 @@ router.get('/', (req, res) => {
   });
 });
 
-export default router;
+module.exports = router;
