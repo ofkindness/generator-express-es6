@@ -1,21 +1,19 @@
-/* eslint strict: 0 */
-
-'use strict';
-
 const Generator = require('yeoman-generator');
-const _ = require('lodash');
+const glob = require('glob');
+const kebabCase = require('lodash.kebabcase');
 const mkdirp = require('mkdirp');
 const path = require('path');
-const glob = require('glob');
 const yosay = require('yosay');
 
-class ExpressGenerator extends Generator {
-  constructor(args, options) {
-    super(args, options);
+module.exports = class extends Generator {
+  // The name `constructor` is important here
+  constructor(args, opts) {
+    // Calling the super constructor is important so our generator is correctly set up
+    super(args, opts);
 
-    this.options = options;
+    this.options = opts;
 
-    this.slugify = _.kebabCase;
+    this.slugify = kebabCase;
   }
 
   prompting() {
@@ -135,7 +133,6 @@ class ExpressGenerator extends Generator {
         file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('test', file)), this)
       );
     }
-
   }
 
   install() {
@@ -145,9 +142,8 @@ class ExpressGenerator extends Generator {
     if (this.options.installDependencies === 'yarn') {
       this.yarnInstall();
     }
+    /* eslint no-console: 0 */
     console.log(yosay(`Run the app:
-$ DEBUG=${this.appname}:* npm start`));
+$ npm start`));
   }
-}
-
-module.exports = ExpressGenerator;
+};

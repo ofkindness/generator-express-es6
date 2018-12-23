@@ -1,28 +1,21 @@
 #!/usr/bin/env node
-/* eslint strict: 0 */
-
-'use strict';
 
 /**
  * Module dependencies.
  */
 
-// enables ES6 ('import'.. etc) in Node
-require('babel-core/register');
-require('babel-polyfill');
-
-const app = require('../app').default;
 const debug = require('debug')('<%= slugify(appname) %>:server');
 const http = require('http');
 
+const app = require('../app');
 /**
  * Normalize a port into a number, string, or false.
  */
 
-const normalizePort = (val) => {
+function normalizePort(val) {
   const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (Number.isNaN(port)) {
     // named pipe
     return val;
   }
@@ -33,13 +26,14 @@ const normalizePort = (val) => {
   }
 
   return false;
-};
+}
 
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '3000');
+
 app.set('port', port);
 
 /**
@@ -57,7 +51,7 @@ server.listen(port);
 /**
  * Event listener for HTTP server "error" event.
  */
-
+/* eslint no-console: 0 */
 server.on('error', (error) => {
   if (error.syscall !== 'listen') {
     throw error;
@@ -70,11 +64,11 @@ server.on('error', (error) => {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      debug(`${bind} requires elevated privileges`);
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      debug(`${bind} is already in use`);
+      console.error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:

@@ -1,0 +1,13 @@
+.DS_Store
+/bin/**
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/generators/app/templates/**/**
+/public/**
+/node_modules/**
+/lib-cov/**
+/logs/**
+/.idea/**
+/.nyc_output/**
