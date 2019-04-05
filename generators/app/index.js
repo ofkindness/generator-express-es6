@@ -33,7 +33,8 @@ module.exports = class extends Generator {
       choices: [
         'none',
         'ejs',
-        'pug'
+        'pug',
+        'handlebars'
       ],
       default: 'none',
       store: true
