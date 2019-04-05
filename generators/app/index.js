@@ -34,7 +34,7 @@ module.exports = class extends Generator {
         'none',
         'ejs',
         'pug',
-        'handlebars'
+        'hbs'
       ],
       default: 'none',
       store: true
