@@ -33,7 +33,8 @@ module.exports = class extends Generator {
       choices: [
         'none',
         'ejs',
-        'pug'
+        'pug',
+        'hbs'
       ],
       default: 'none',
       store: true
