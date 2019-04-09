@@ -9,12 +9,12 @@
     "test": "mocha --recursive"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.3",
+    "cookie-parser": "^1.4.4",
     "debug": "^4.1.1"<% if(options.viewEngine === 'ejs'){ %>,
-    "ejs": "^2.6.1"<% } %><% if(options.viewEngine === 'hbs'){ %>,
+    "ejs": "^2.6.1"<% } %>,
+    "express": "^4.16.4"<% if(options.viewEngine === 'hbs'){ %>,
     "hbs": "^4.0.3"<% } %>,
-    "express": "^4.16.4",
-    "http-errors": "^1.7.1"<% if(options.cssPreprocessor === 'less'){ %>,
+    "http-errors": "^1.7.2"<% if(options.cssPreprocessor === 'less'){ %>,
     "less-middleware": "^3.0.1"<% } %>,
     "morgan": "^1.9.1"<% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
@@ -22,12 +22,12 @@
     "stylus": "^0.54.5"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
-    "chai": "^4.1.1",
-    "chai-http": "^4.2.0",<% } %>
-    "eslint": "^5.10.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",<% } %>
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
   }
 }
