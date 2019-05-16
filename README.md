@@ -8,10 +8,11 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
 
 ## Features
 
-- Support ES6 syntax 
+- Support ES6 syntax
 - Support View engines:
   - [EJS](http://ejs.co)
   - [Pug](https://pugjs.org)
+  - [Handlebars](https://handlebarsjs.com/)
 - Support CSS pre-processors:
   - [LESS](http://lesscss.org)
   - [SASS](http://sass-lang.com)
