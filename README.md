@@ -1,6 +1,6 @@
 # Generator express-es6
 [![NPM version](https://img.shields.io/npm/v/generator-express-es6.svg)](https://npmjs.org/package/generator-express-es6)
-[![Dependency Status](https://david-dm.org/ofkindness/generator-express-es6.svg?theme=shields.io)](https://david-dm.org/ofkindness/generator-express-es6)
+![Hackage-Deps](https://img.shields.io/hackage-deps/v/generator-express-es6?style=flat-square)
 [![NPM Downloads](https://img.shields.io/npm/dm/generator-express-es6.svg)](https://npmjs.org/package/generator-express-es6)
 
 
