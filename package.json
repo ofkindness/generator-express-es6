@@ -1,6 +1,6 @@
 {
   "name": "generator-express-es6",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Yeoman generator for Express.js",
   "homepage": "",
   "author": {
@@ -33,7 +33,9 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gulp-mocha": "^8.0.0"
   },
   "repository": "ofkindness/generator-express-es6",
   "scripts": {
