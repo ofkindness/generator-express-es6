@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "glob": "^7.1.6",
+    "lodash.assignin": "^4.2.0",
     "lodash.kebabcase": "^4.1.1",
     "mkdirp": "^1.0.4",
     "yeoman-generator": "^5.2.0",
