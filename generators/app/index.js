@@ -1,9 +1,13 @@
 const glob = require('glob');
+const assignin = require('lodash.assignin');
 const kebabCase = require('lodash.kebabcase');
+const install = require('yeoman-generator/lib/actions/install');
 const mkdirp = require('mkdirp');
 const path = require('path');
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
+
+assignin(Generator.prototype, install);
 
 module.exports = class extends Generator {
   // The name `constructor` is important here
