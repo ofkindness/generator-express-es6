@@ -141,7 +141,6 @@ module.exports = class extends Generator {
   }
 
   install() {
-    console.log({ this: this });
     if (this.options.installDependencies === 'npm') {
       this.npmInstall();
     }
