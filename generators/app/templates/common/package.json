@@ -18,7 +18,8 @@
     "less-middleware": "^3.1.0"<% } %>,
     "morgan": "^1.10.0"<% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
-    "pug": "^3.0.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
+    "pug": "^3.0.2"<% } %><% if(options.viewEngine === 'squirrelly'){ %>,
+    "squirrelly": "^7.9.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
     "stylus": "^0.54.8"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
