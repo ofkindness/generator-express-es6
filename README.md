@@ -13,11 +13,13 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
   - [EJS](http://ejs.co)
   - [Pug](https://pugjs.org)
   - [Handlebars](https://handlebarsjs.com/)
+  - [Squirrelly](https://squirrelly.gitbook.io/docs/) *
 - Support CSS pre-processors:
   - [LESS](http://lesscss.org)
   - [SASS](http://sass-lang.com)
   - [Stylus](http://stylus-lang.com)
 
+* Currently version `7.9.2` can be supported only
 
 ## Installation
 
