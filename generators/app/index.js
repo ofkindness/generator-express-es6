@@ -39,6 +39,7 @@ module.exports = class extends Generator {
         'ejs',
         'eta',
         'hbs',
+        'njk',
         'pug',
         'squirrelly'
       ],
