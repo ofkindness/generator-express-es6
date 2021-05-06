@@ -15,12 +15,12 @@ const app = express();
 <% if(options.viewEngine !== 'none'){ %>
 app.set('views', path.join(__dirname, 'views'));
 // view engine setup
-app.set('view engine', '<%= options.viewEngine %>');<% } %>
-<% if(options.viewEngine === 'liquid'){ %>const engine = new Liquid({
+app.set('view engine', '<%= options.viewEngine %>');
+<% } %><% if(options.viewEngine === 'liquid'){ %>const engine = new Liquid({
   extname: '.liquid'
 });
-app.engine('liquid', engine.express());<% } %>
-<% if(options.viewEngine === 'njk'){ %>nunjucks.configure('views', {
+app.engine('liquid', engine.express());
+<% } %><% if(options.viewEngine === 'njk'){ %>nunjucks.configure('views', {
   autoescape: true,
   express: app
 });<% } %>
