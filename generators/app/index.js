@@ -37,6 +37,7 @@ module.exports = class extends Generator {
       choices: [
         'none',
         'ejs',
+        'eta',
         'hbs',
         'pug',
         'squirrelly'

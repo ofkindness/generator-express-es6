@@ -11,7 +11,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "debug": "^4.3.1"<% if(options.viewEngine === 'ejs'){ %>,
-    "ejs": "^3.1.6"<% } %>,
+    "ejs": "^3.1.6"<% } %><% if(options.viewEngine === 'eta'){ %>,
+    "eta": "^1.12.1"<% } %>,
     "express": "^4.17.1"<% if(options.viewEngine === 'hbs'){ %>,
     "hbs": "^4.1.2"<% } %>,
     "http-errors": "^1.8.0"<% if(options.cssPreprocessor === 'less'){ %>,
