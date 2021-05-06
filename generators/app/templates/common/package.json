@@ -5,6 +5,7 @@
   "private": true,
   "main": "app.js",
   "scripts": {
+    "eslint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 --ext .js .",
     "start": "node ./bin/start"<% if(options.addTest){ %>,
     "test": "./node_modules/mocha/bin/mocha --recursive"<% } %>
   },
