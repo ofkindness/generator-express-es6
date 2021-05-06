@@ -12,8 +12,10 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
 - Support View engines:
   - [EJS](http://ejs.co)
   - [Eta](https://eta.js.org/)
-  - [Pug](https://pugjs.org)
   - [Handlebars](https://handlebarsjs.com/)
+  - [Liquidjs](https://liquidjs.com/)
+  - [Nunjucks](https://mozilla.github.io/nunjucks)
+  - [Pug](https://pugjs.org)
   - [Squirrelly](https://squirrelly.gitbook.io/docs/) *
 - Support CSS pre-processors:
   - [LESS](http://lesscss.org)
