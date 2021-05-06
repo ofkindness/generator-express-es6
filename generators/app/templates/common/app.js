@@ -3,6 +3,8 @@ const express = require('express');
 const httpErrors = require('http-errors');
 <% if(options.cssPreprocessor === 'less'){ %>const lessMiddleware = require('less-middleware');
 <% } %>const logger = require('morgan');
+<% if(options.viewEngine === 'njk'){ %>const nunjucks = require('nunjucks');
+<% } %>
 <% if(options.cssPreprocessor === 'sass'){ %>const sassMiddleware = require('node-sass-middleware');
 <% } %>const path = require('path');
 <% if(options.cssPreprocessor === 'stylus'){ %>const { middleware: stylusMiddleware } = require('stylus');
@@ -14,6 +16,10 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 // view engine setup
 app.set('view engine', '<%= options.viewEngine %>');<% } %>
+<% if(options.viewEngine === 'njk'){ %>nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});<% } %>
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
