@@ -18,7 +18,7 @@
     "hbs": "^4.1.2"<% } %>,
     "http-errors": "^1.8.0"<% if(options.cssPreprocessor === 'less'){ %>,
     "less-middleware": "^3.1.0"<% } %><% if(options.viewEngine === 'liquid'){ %>,
-    "liquidjs": "^9.24.2"<% } %>,
+    "liquidjs": "^9.25.0"<% } %>,
     "morgan": "^1.10.0"<% if(options.viewEngine === 'njk'){ %>,
     "nunjucks": "^3.2.3"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
@@ -27,14 +27,14 @@
     "stylus": "^0.54.8"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "chai-http": "^4.3.0",<% } %>
-    "eslint": "^7.25.0",
+    "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0"<% if(options.addTest){ %>,
-    "mocha": "^8.3.2"<% } %>
+    "mocha": "^8.4.0"<% } %>
   }
 }
