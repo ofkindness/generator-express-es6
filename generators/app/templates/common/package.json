@@ -5,29 +5,36 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "node ./bin/start",
-    "test": "mocha --recursive"
+    "eslint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 --ext .js .",
+    "start": "node ./bin/start"<% if(options.addTest){ %>,
+    "test": "./node_modules/mocha/bin/mocha --recursive"<% } %>
   },
   "dependencies": {
-    "cookie-parser": "^1.4.4",
-    "debug": "^4.1.1"<% if(options.viewEngine === 'ejs'){ %>,
-    "ejs": "^2.6.2"<% } %>,
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.1"<% if(options.viewEngine === 'ejs'){ %>,
+    "ejs": "^3.1.6"<% } %><% if(options.viewEngine === 'eta'){ %>,
+    "eta": "^1.12.1"<% } %>,
     "express": "^4.17.1"<% if(options.viewEngine === 'hbs'){ %>,
-    "hbs": "^4.0.4"<% } %>,
-    "http-errors": "^1.7.3"<% if(options.cssPreprocessor === 'less'){ %>,
-    "less-middleware": "^3.1.0"<% } %>,
-    "morgan": "^1.9.1"<% if(options.cssPreprocessor === 'sass'){ %>,
+    "hbs": "^4.1.2"<% } %>,
+    "http-errors": "^1.8.0"<% if(options.cssPreprocessor === 'less'){ %>,
+    "less-middleware": "^3.1.0"<% } %><% if(options.viewEngine === 'liquid'){ %>,
+    "liquidjs": "^9.25.0"<% } %>,
+    "morgan": "^1.10.0"<% if(options.viewEngine === 'njk'){ %>,
+    "nunjucks": "^3.2.3"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
-    "pug": "^2.0.4"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
-    "stylus": "^0.54.5"<% } %>
+    "pug": "^3.0.2"<% } %><% if(options.viewEngine === 'squirrelly'){ %>,
+    "squirrelly": "^7.9.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
+    "stylus": "^0.54.8"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "chai-http": "^4.3.0",<% } %>
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3"
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0"<% if(options.addTest){ %>,
+    "mocha": "^8.4.0"<% } %>
   }
 }

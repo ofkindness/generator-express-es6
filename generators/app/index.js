@@ -1,9 +1,13 @@
-const Generator = require('yeoman-generator');
 const glob = require('glob');
+const assignin = require('lodash.assignin');
 const kebabCase = require('lodash.kebabcase');
+const install = require('yeoman-generator/lib/actions/install');
 const mkdirp = require('mkdirp');
 const path = require('path');
+const Generator = require('yeoman-generator');
 const yosay = require('yosay');
+
+assignin(Generator.prototype, install);
 
 module.exports = class extends Generator {
   // The name `constructor` is important here
@@ -33,8 +37,12 @@ module.exports = class extends Generator {
       choices: [
         'none',
         'ejs',
+        'eta',
+        'hbs',
+        'liquid',
+        'njk',
         'pug',
-        'hbs'
+        'squirrelly'
       ],
       default: 'none',
       store: true
@@ -93,7 +101,7 @@ module.exports = class extends Generator {
       cwd: this.sourceRoot(),
       dot: true
     }).map(
-      file => this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this)
+      (file) => this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this)
     );
 
     // routes
@@ -101,7 +109,7 @@ module.exports = class extends Generator {
     glob.sync('**', {
       cwd: this.sourceRoot()
     }).map(
-      file => this.fs.copyTpl(this.templatePath(file), this.destinationPath(path.join('routes', file)), this)
+      (file) => this.fs.copyTpl(this.templatePath(file), this.destinationPath(path.join('routes', file)), this)
     );
 
     // public
@@ -114,7 +122,7 @@ module.exports = class extends Generator {
     glob.sync('**', {
       cwd: this.sourceRoot()
     }).map(
-      file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('public', 'stylesheets', file)), this)
+      (file) => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('public', 'stylesheets', file)), this)
     );
 
     // views
@@ -122,7 +130,7 @@ module.exports = class extends Generator {
     glob.sync('**', {
       cwd: this.sourceRoot()
     }).map(
-      file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('views', file)), this)
+      (file) => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('views', file)), this)
     );
 
     // test
@@ -131,7 +139,7 @@ module.exports = class extends Generator {
       glob.sync('**', {
         cwd: this.sourceRoot()
       }).map(
-        file => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('test', file)), this)
+        (file) => this.fs.copy(this.templatePath(file), this.destinationPath(path.join('test', file)), this)
       );
     }
   }

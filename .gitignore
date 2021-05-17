@@ -3,3 +3,4 @@ coverage
 temp
 .yo-rc.json
 npm-debug.log
+.DS_Store

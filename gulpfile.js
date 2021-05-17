@@ -1,6 +1,7 @@
 const { src, task, watch } = require('gulp');
 const eslint = require('gulp-eslint');
 const excludeGitignore = require('gulp-exclude-gitignore');
+const mocha = require('gulp-mocha');
 const plumber = require('gulp-plumber');
 
 task('static', () => src('**/*.js')
