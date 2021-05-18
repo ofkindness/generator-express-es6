@@ -42,7 +42,6 @@ module.exports = class extends Generator {
         'liquid',
         'njk',
         'pug',
-        'squirrelly'
       ],
       default: 'none',
       store: true

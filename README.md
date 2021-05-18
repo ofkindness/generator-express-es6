@@ -16,13 +16,10 @@ An Express.js generator for Yeoman. Mimicry the express command line tool.
   - [Liquidjs](https://liquidjs.com/)
   - [Nunjucks](https://mozilla.github.io/nunjucks)
   - [Pug](https://pugjs.org)
-  - [Squirrelly](https://squirrelly.gitbook.io/docs/) *
 - Support CSS pre-processors:
   - [LESS](http://lesscss.org)
   - [SASS](http://sass-lang.com)
   - [Stylus](http://stylus-lang.com)
-
-* Current version `7.9.2`. Versions newer then `8` can't be supported
 
 ## Installation
 
