@@ -11,30 +11,29 @@
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
-    "debug": "^4.3.1"<% if(options.viewEngine === 'ejs'){ %>,
+    "debug": "^4.3.2"<% if(options.viewEngine === 'ejs'){ %>,
     "ejs": "^3.1.6"<% } %><% if(options.viewEngine === 'eta'){ %>,
-    "eta": "^1.12.1"<% } %>,
+    "eta": "^1.12.3"<% } %>,
     "express": "^4.17.1"<% if(options.viewEngine === 'hbs'){ %>,
     "hbs": "^4.1.2"<% } %>,
     "http-errors": "^1.8.0"<% if(options.cssPreprocessor === 'less'){ %>,
     "less-middleware": "^3.1.0"<% } %><% if(options.viewEngine === 'liquid'){ %>,
-    "liquidjs": "^9.25.0"<% } %>,
+    "liquidjs": "^9.25.1"<% } %>,
     "morgan": "^1.10.0"<% if(options.viewEngine === 'njk'){ %>,
     "nunjucks": "^3.2.3"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
-    "pug": "^3.0.2"<% } %><% if(options.viewEngine === 'squirrelly'){ %>,
-    "squirrelly": "^7.9.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
+    "pug": "^3.0.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
     "stylus": "^0.54.8"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",<% } %>
-    "eslint": "^7.26.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"<% if(options.addTest){ %>,
-    "mocha": "^8.4.0"<% } %>
+    "mocha": "^9.0.3"<% } %>
   }
 }
