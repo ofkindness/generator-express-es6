@@ -10,20 +10,20 @@
     "test": "./node_modules/mocha/bin/mocha --recursive"<% } %>
   },
   "dependencies": {
-    "cookie-parser": "^1.4.5",
-    "debug": "^4.3.2"<% if(options.viewEngine === 'ejs'){ %>,
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.3"<% if(options.viewEngine === 'ejs'){ %>,
     "ejs": "^3.1.6"<% } %><% if(options.viewEngine === 'eta'){ %>,
     "eta": "^1.12.3"<% } %>,
-    "express": "^4.17.1"<% if(options.viewEngine === 'hbs'){ %>,
-    "hbs": "^4.1.2"<% } %>,
-    "http-errors": "^1.8.0"<% if(options.cssPreprocessor === 'less'){ %>,
+    "express": "^4.17.2"<% if(options.viewEngine === 'hbs'){ %>,
+    "hbs": "^4.2.0"<% } %>,
+    "http-errors": "^2.0.0"<% if(options.cssPreprocessor === 'less'){ %>,
     "less-middleware": "^3.1.0"<% } %><% if(options.viewEngine === 'liquid'){ %>,
-    "liquidjs": "^9.25.1"<% } %>,
+    "liquidjs": "^9.31.0"<% } %>,
     "morgan": "^1.10.0"<% if(options.viewEngine === 'njk'){ %>,
     "nunjucks": "^3.2.3"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
     "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
     "pug": "^3.0.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
-    "stylus": "^0.54.8"<% } %>
+    "stylus": "^0.56.0"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
     "chai": "^4.3.4",
@@ -34,6 +34,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"<% if(options.addTest){ %>,
-    "mocha": "^9.0.3"<% } %>
+    "mocha": "^9.1.3"<% } %>
   }
 }
