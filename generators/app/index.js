@@ -181,11 +181,11 @@ export default class extends Generator {
       const child = spawnSync(command, args, { cwd: this.destinationRoot(), stdio: 'inherit' });
 
       if (child.error) {
-        console.error(`Error during installation: ${child.error.message}`);
+        this.log(`Error during installation: ${child.error.message}`);
       } else if (child.status === 0) {
-        console.log('Dependencies installed successfully');
+        this.log('Dependencies installed successfully');
       } else {
-        console.error(`Installation failed with code ${child.status}`);
+        this.log(`Installation failed with code ${child.status}`);
       }
     }
 

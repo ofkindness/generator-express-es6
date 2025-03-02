@@ -5,9 +5,9 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "eslint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 --ext .js .",
-    "start": "node ./bin/start"<% if(options.addTest){ %>,
-    "test": "./node_modules/mocha/bin/mocha --recursive"<% } %>
+    "lint": "eslint --max-warnings 0 --ext .js .",
+    "start": "./bin/start"<% if(options.addTest){ %>,
+    "test": "mocha --recursive"<% } %>
   },
   "dependencies": {
     "cookie-parser": "1.4.7",
@@ -26,8 +26,8 @@
     "stylus": "0.64.0"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
-    "chai": "5.2.0",
-    "chai-http": "5.1.1",<% } %>
+    "chai": "4.3.6",
+    "chai-http": "4.3.0",<% } %>
     "eslint": "9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-node": "^11.1.0",
