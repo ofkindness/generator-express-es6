@@ -36,6 +36,12 @@ Then generate your new project:
 yo express-es6
 ```
 
+## Development
+
+```bash
+cd generator-express-es6 && npm link
+```
+
 ## Contributing
 
 Contributors are welcome, please fork and send pull requests! If you have any ideas on how to make this project better then please submit an issue.

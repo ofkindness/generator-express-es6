@@ -1,5 +1,7 @@
 language: node_js
 node_js:
+  - v20
+  - v18
   - v16
   - v15
   - v14
