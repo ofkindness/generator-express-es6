@@ -9,7 +9,7 @@ const httpErrors = require('http-errors');
 <% } %>const path = require('path');
 <% if(options.cssPreprocessor === 'stylus'){ %>const { middleware: stylusMiddleware } = require('stylus');
 <% } %>
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index.js');
 
 const app = express();
 <% if(options.viewEngine !== 'none'){ %>

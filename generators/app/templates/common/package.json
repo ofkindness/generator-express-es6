@@ -10,30 +10,29 @@
     "test": "./node_modules/mocha/bin/mocha --recursive"<% } %>
   },
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "debug": "^4.3.3"<% if(options.viewEngine === 'ejs'){ %>,
-    "ejs": "^3.1.6"<% } %><% if(options.viewEngine === 'eta'){ %>,
-    "eta": "^1.12.3"<% } %>,
-    "express": "^4.17.2"<% if(options.viewEngine === 'hbs'){ %>,
+    "cookie-parser": "1.4.7",
+    "debug": "4.4.0"<% if(options.viewEngine === 'ejs'){ %>,
+    "ejs": "3.1.10"<% } %><% if(options.viewEngine === 'eta'){ %>,
+    "eta": "3.5.0"<% } %>,
+    "express": "4.21.2"<% if(options.viewEngine === 'hbs'){ %>,
     "hbs": "^4.2.0"<% } %>,
     "http-errors": "^2.0.0"<% if(options.cssPreprocessor === 'less'){ %>,
     "less-middleware": "^3.1.0"<% } %><% if(options.viewEngine === 'liquid'){ %>,
-    "liquidjs": "^9.31.0"<% } %>,
+    "liquidjs": "10.21.0"<% } %>,
     "morgan": "^1.10.0"<% if(options.viewEngine === 'njk'){ %>,
-    "nunjucks": "^3.2.3"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
-    "node-sass-middleware": "^0.11.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
-    "pug": "^3.0.2"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
-    "stylus": "^0.56.0"<% } %>
+    "nunjucks": "3.2.4"<% } %><% if(options.cssPreprocessor === 'sass'){ %>,
+    "node-sass-middleware": "1.1.0"<% } %><% if(options.viewEngine === 'pug'){ %>,
+    "pug": "3.0.3"<% } %><% if(options.cssPreprocessor === 'stylus'){ %>,
+    "stylus": "0.64.0"<% } %>
   },
   "devDependencies": {<% if(options.addTest){ %>
-    "chai": "^4.3.4",
-    "chai-http": "^4.3.0",<% } %>
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.24.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"<% if(options.addTest){ %>,
-    "mocha": "^9.1.3"<% } %>
+    "chai": "5.2.0",
+    "chai-http": "5.1.1",<% } %>
+    "eslint": "9.21.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-security": "^3.0.1"<% if(options.addTest){ %>,
+    "mocha": "11.1.0"<% } %>
   }
 }
